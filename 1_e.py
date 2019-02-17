@@ -9,8 +9,7 @@ def twoSum(nums, target):
         j = i + 1
         while j < len(nums):
             if target == nums[i] + nums[j]:
-                ls = [i, j]
-                return ls
+                return [i, j]
                 break
             j = j + 1
         i = i + 1
