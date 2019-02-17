@@ -1,4 +1,4 @@
-def twoSum(self, nums, target):
+def twoSum(nums, target):
     """
     :type nums: List[int]
     :type target: int
@@ -15,7 +15,10 @@ def twoSum(self, nums, target):
             j = j + 1
         i = i + 1
 
+
 """
 test case:
-nums = [2, 7, 11, 15], target = 9
+nums = [2, 7, 11, 15]
+target = 9
+print(twoSum(nums, target))
 """
