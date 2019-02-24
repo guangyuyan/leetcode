@@ -6,15 +6,18 @@ def merge(nums1, m, nums2, n):
     :type n: int
     :rtype: void Do not return anything, modify nums1 in-place instead.
     """
-    i = 0
-    min_idx = 0
-    max_idx = m - 1
-    while i < n:
-        if nums2[i] == nums1[(min_idx + max_idx) // 2]:
-            nums1.insert(nums2[i])
-        if nums2[i] > nums1[(min_idx + max_idx) // 2]:
-            min_idx = (min_idx + max_idx) // 2 + 1
+    i = m + n - 1
+
+    while i >= 0:
+        if n == 0:
+            break
+        if m == 0:
+            nums1[:n] = nums2[:n]
+            break
+        if nums1[m - 1] >= nums2[n - 1]:
+            nums1[i] = nums1[m - 1]
+            m -= 1
         else:
-            max_idx = (min_idx + max_idx) // 2 - 1
-        i += 1
-    return nums1
+            nums1[i] = nums2[n - 1]
+            n -= 1
+        i -= 1
